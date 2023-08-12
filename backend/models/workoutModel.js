@@ -26,6 +26,6 @@ const workoutSchema = new Schema(
 
 // export model
 // creates Workoutes collection automatically
-// creates model
+// creates model - Workout
 // model is used to interact with the Workout collection bcoz it automatically creates a collection for us based on this name. It pluralizes this and build that collection in the db for us
 module.exports = mongoose.model("Workout", workoutSchema);
