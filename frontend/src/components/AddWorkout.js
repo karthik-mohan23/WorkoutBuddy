@@ -44,7 +44,7 @@ const AddWorkout = () => {
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
-            className="outline-none border border-green-300 px-2"
+            className="outline-none border border-green-300 px-2 h-8"
           />
         </div>
         <div className="flex justify-between mb-4">
@@ -53,7 +53,7 @@ const AddWorkout = () => {
             type="number"
             onChange={(e) => setLoad(e.target.value)}
             value={load}
-            className="outline-none border border-green-300 px-2"
+            className="outline-none border border-green-300 px-2 h-8"
           />
         </div>
         <div className="flex justify-between mb-7">
@@ -62,14 +62,13 @@ const AddWorkout = () => {
             type="number"
             onChange={(e) => setReps(e.target.value)}
             value={reps}
-            className="outline-none border border-green-300 px-2"
+            className="outline-none border border-green-300 px-2 h-8"
           />
         </div>
-        {/* <div className="border border-red-500"> */}
+
         <button className="w-full text-center block bg-green-500 py-1 rounded hover:bg-green-700 hover:text-white duration-300">
-          Create
+          Add Workout
         </button>
-        {/* </div> */}
       </form>
     </div>
   );

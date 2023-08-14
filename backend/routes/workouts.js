@@ -6,7 +6,6 @@ const {
   deleteWorkout,
   updateWorkout,
 } = require("../controllers/workoutController");
-console.log(getAllWorkouts, getSingleWorkout, createWorkout);
 
 const router = express.Router();
 
