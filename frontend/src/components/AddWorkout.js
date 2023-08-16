@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { json } from "react-router-dom";
+
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 const AddWorkout = () => {
+  const { dispatch } = useWorkoutsContext();
   const [title, setTitle] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
@@ -21,7 +23,7 @@ const AddWorkout = () => {
     const data = await response.json();
 
     if (!response.ok) {
-      setError(json.error);
+      setError(data.error);
     }
     if (response.ok) {
       setTitle("");
@@ -29,6 +31,7 @@ const AddWorkout = () => {
       setReps("");
       setError(null);
       console.log("new workout added");
+      dispatch({ type: "CREATE_WORKOUTS", payload: data });
     }
   };
 
