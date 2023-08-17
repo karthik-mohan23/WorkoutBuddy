@@ -1,6 +1,9 @@
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
+// date fns
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+
 const WorkoutDetails = (props) => {
   const { title, load, reps, createdAt, _id } = props;
 
@@ -30,7 +33,8 @@ const WorkoutDetails = (props) => {
           <span className=" font-medium ">Reps:</span>
           {reps}
         </p>
-        <p>{createdAt}</p>
+        {/* 2 days with suffix 2 days ago */}
+        <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p>
       </div>
       <div>
         <RiDeleteBin6Fill
