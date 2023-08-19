@@ -6,6 +6,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 //workout route
 const workoutRoutes = require("./routes/workouts");
+// user routes
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use((req, res, next) => {
 });
 
 // routes
+app.use("/api/user", userRoutes);
 app.use("/api/workouts", workoutRoutes);
 
 // object to connect to the database
